@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Home Page</h1>
+    <h1>'Home Page'</h1>
     {% if user.is_authenticated %}
-        <p>Hello {{ user.username }} | <a href="{% url 'logout' %}">Log Out</a> </p>
+        <p>Hello {{ user.username }} | <a href="{% url 'password_change' %}">Change password</a> | <a href="{% url 'logout' %}">Log Out</a> </p>
     {% else %}
         <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
     {% endif %}
