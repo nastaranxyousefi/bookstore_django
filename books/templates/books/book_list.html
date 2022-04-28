@@ -9,16 +9,17 @@
     {% for book in books %}
 
         <div class="card mt-5">
-            <div class="card-header">
+            <div class="card-header text-white bg-success">
                 {{ book.title }}
             </div>
-            <div class="card-body">
+            <div class="card-body bg-light ">
                 <blockquote class="blockquote mb-0">
                 <p>{{ book.description|slice:"250" }}...</p>
                  <footer class="blockquote-footer">
                      {{ book.author }}
                  </footer>
                 </blockquote>
+            <a href="{{ book.get_absolute_url }}" class="btn btn-danger mt-4">جزئیات بیشتر</a>
             </div>
         </div>
 
