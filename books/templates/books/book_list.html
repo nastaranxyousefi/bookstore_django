@@ -1,0 +1,27 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+   لیست کتاب ها
+{% endblock %}
+
+{% block content %}
+
+    {% for book in books %}
+
+        <div class="card mt-5">
+            <div class="card-header">
+                {{ book.title }}
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p>{{ book.description|slice:"250" }}...</p>
+                 <footer class="blockquote-footer">
+                     {{ book.author }}
+                 </footer>
+                </blockquote>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
