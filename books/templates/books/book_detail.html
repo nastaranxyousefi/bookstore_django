@@ -14,6 +14,7 @@
             <p class="card-text text-dark">{{ book.description }}</p>
             <p class="btn btn-light"> $قیمت : {{ book.price }}</p>
             <br>
+            <a href="{% url 'book_update' book.id %}"><button type="button" class="btn btn-outline-primary">ویرایش</button></a>
             <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">لیست همه کتاب ها</a>
         </div>
     </div>
