@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    حذف کتاب {{ book.title }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="card border-primary mb-3">
+        <div class="card-header"><h3>"حذف کتاب "{{ book.title }}</h3></div>
+        <div class="card-body text-primary">
+            <form action="" method="post">
+                {% csrf_token %}
+                <h4>آیا از حذف کردن کتاب "{{ book.title }}" مطمئن هستید؟</h4>
+
+                <a class="btn btn-warning mt-3" href="{% url 'book_detail' book.id %}">خیر</a>
+                <button type="submit" class="btn btn-danger mt-3">بله مطمئنم</button>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
+
