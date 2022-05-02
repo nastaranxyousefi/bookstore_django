@@ -7,11 +7,11 @@
 {% block content %}
 
     <div class="card border-primary mb-3">
-        <div class="card-header"><h3>{{ book.title }}</h3></div>
+        <div class="card-header"><h3>{{ book.title |capfirst }}</h3></div>
         <div class="card-body text-primary">
             <h5 class="card-title">درباره این کتاب</h5>
             <p class="card-text text-dark"> نویسنده : {{ book.author }}</p>
-            <p class="card-text text-dark">{{ book.description }}</p>
+            <p class="card-text text-dark">{{ book.description|linebreaks }}</p>
             <p class="btn btn-light"> $قیمت : {{ book.price }}</p>
             <br>
             <a href="{% url 'book_update' book.id %}"><button type="button" class="btn btn-outline-primary">ویرایش</button></a>
