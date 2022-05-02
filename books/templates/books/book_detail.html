@@ -1,5 +1,7 @@
 {% extends '_base.html' %}
 
+
+
 {% block page_title %}
      جزئیات کتاب {{ book.title }}
 {% endblock %}
@@ -11,7 +13,7 @@
         <div class="card-body text-primary">
             <h5 class="card-title">درباره این کتاب</h5>
             <p class="card-text text-dark"> نویسنده : {{ book.author }}</p>
-            <p class="card-text text-dark">{{ book.description|linebreaks }}</p>
+            <p class="card-text text-dark">{{ book.description|linebreaks}}</p>
             <p class="btn btn-light"> $قیمت : {{ book.price }}</p>
             <br>
             <a href="{% url 'book_update' book.id %}"><button type="button" class="btn btn-outline-primary">ویرایش</button></a>
