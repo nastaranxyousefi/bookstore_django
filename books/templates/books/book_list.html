@@ -5,25 +5,31 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container mt-4">
+    <div class="row flex-row-reverse justify-content-md-center">
+        {% for book in books %}
 
-    {% for book in books %}
-
-        <div class="card mt-5">
-            <div class="card-header text-white bg-success">
-                {{ book.title |capfirst }}
-            </div>
-            <div class="card-body bg-light ">
-                <blockquote class="blockquote mb-0">
-                <p>{{ book.description|truncatewords:20 }}...</p>
-                 <footer class="blockquote-footer">
-                     {{ book.author }}
-                 </footer>
-                </blockquote>
-            <a href="{{ book.get_absolute_url }}" class="btn btn-danger mt-4">جزئیات بیشتر</a>
+        <div class="card m-2" style="max-width: 45%">
+            <div class="row g-0 h-100" dir="rtl">
+                <div class="col-md-4">
+                    <img src="https://newcdn.fidibo.com/images/books/69249_94233_normal.jpg"
+                         class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8 h-100">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                        <div class="card-body">
+                            <a href="{{ book.get_absolute_url }}"><h3 class="card-title"><strong>{{ book.title |capfirst }}</strong></h3></a>
+                            <p class="card-text pt-3">{{ book.description|truncatewords:35 }}</p>
+                            <p class="text-muted">نویسنده: {{ book.author }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endfor %}
+    </div>
+</div>
 
-    {% endfor %}
-    <a class="m-5" href="{% url 'book_create' %}"> <h4>اضافه کردن کتاب جدید</h4></a>
+
 
 {% endblock %}
