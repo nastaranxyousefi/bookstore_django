@@ -7,28 +7,15 @@
 {% endblock %}
 
 {% block content %}
-{##}
-{#    <div class="card border-primary mb-3">#}
-{#        <div class="card-header"><h3>ایجاد کتاب جدید</h3></div>#}
-{#        <div class="card-body text-primary">#}
-{#            <form action="" method="post">#}
-{#                {% csrf_token %}#}
-{#                {{ form.as_p }}#}
-{##}
-{#                <button type="submit" class="btn btn-success">ثبت کتاب</button>#}
-{#            </form>#}
-{##}
-{#        </div>#}
-{#    </div>#}
 
 
     <div class="container mt-4" dir="rtl">
     <div class="row">
         <div class="col-9">
             <div class="card shadow my-3">
-                <h5 class="card-header bg-success text-light px-5">فرم</h5>
+                <h5 class="card-header bg-success text-light px-5">ایجاد یک کتاب جدید</h5>
                 <div class="px-5 pt-3 pb-5">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
 
                         {% csrf_token %}
 
