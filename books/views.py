@@ -1,6 +1,6 @@
 from django.views import generic
-from django.urls import reverse_lazy, reverse
-from django.shortcuts import get_object_or_404, render
+from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404, render, redirect
 
 from .models import Book, Comment
 from .forms import CommentForm
@@ -26,7 +26,8 @@ def book_detail_view(request, pk):
             new_comment.book = book
             new_comment.user = request.user
             new_comment.save()
-            comment_form = CommentForm()
+            return redirect('book_list')
+
 
     context = {
         'book' : book,

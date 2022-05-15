@@ -26,4 +26,4 @@ class Comment(models.Model):
     recommend = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'{self.user} commented on "{self.book.title}".'
+        return self.text
