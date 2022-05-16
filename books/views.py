@@ -13,6 +13,9 @@ class BookListView(generic.ListView):
     template_name = 'books/book_list.html'
     context_object_name = 'books'
 
+    def get_queryset(self):
+        return Book.objects.order_by('-datetime_modified')
+
 
 @login_required
 def book_detail_view(request, pk):
